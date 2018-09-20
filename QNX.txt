@@ -1,0 +1,40 @@
+#QNX
+
+Description
+
+QNX is based on the idea of running most of the operating system kernel in the form of a number of small tasks,
+known as Resource Managers. This differs from the more traditional monolithic kernel,
+in which the operating system kernel is a single very large program composed of a huge number of "parts" with special abilities.
+In the case of QNX, the use of a microkernel allows users (developers) to turn off any functionality they do not
+require without having to change the OS itself; instead, those services will simply not run.
+QNX offers a license for non-commercial and academic users. The Blackberry Products are using QNX.
+
+Technology
+
+The QNX kernel (procnto) contains only CPU scheduling, interprocess communication, interrupt redirection and timers.
+Everything else runs as a user process, including a special process known as proc which performs process creation and memory
+management by operating in conjunction with the microkernel. This is made possible by two key mechanisms — subroutine-call type
+interprocess communication, and a boot loader which can load an image containing not only the kernel but any desired collection of
+user programs and shared libraries.
+
+QNX interprocess communication consists of sending a message from one process to another and waiting for a reply. This is a single operation,
+called MsgSend. The message is copied, by the kernel, from the address space of the sending process to that of the receiving process.
+If the receiving process is waiting for the message, control of the CPU is transferred at the same time, without a pass through the CPU scheduler.
+
+Advanteges
+
+QNX Micro Kernel is very small in Size
+The tiny kernel provides the minimal services used by a team of optional cooperating processes, which in turn provide the higher-level OS functionality
+The microkernel itself lacks filesystems and many other services normally expected of an OS; those services are provided by optional processes
+The QNX IPC services are used to "glue" the OS itself together, the performance and flexibility of those services govern the performance of the resulting OS
+The QNX micro kernel provides a complete memory protection as it runs only the kernel in the kernel space and the other processes run the user space
+This makes QNX robust, any process termination/crash doesn’t cause any impact on the kernel and it keeps running all the time
+QNX provides a Real time performance due to its micro kernel design
+QNX Message passing IPC is very fast and effective
+QNX provides a good GUI development tool kit
+QNX provides linux like development environment/commands and hence it is easy to use
+QNX kernel never crash and hence QNX is preferred in mission critical applications
+
+Disadvanteges
+
+You must pay for the license
